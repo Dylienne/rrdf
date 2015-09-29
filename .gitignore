@@ -27,3 +27,5 @@ rrdf/java/*.jar
 .Rproj.user
 
 .Rhistory
+
+rrdf.Rproj

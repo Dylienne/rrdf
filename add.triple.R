@@ -1,4 +1,4 @@
-# Copyright (C) 2011  Egon Willighagen <egon.willighagen@gmail.com>
+# Copyright (C) 2011 Egon Willighagen <egon.willighagen@gmail.com> - 2015  Davide Ceolin <davide.ceolin@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -13,14 +13,14 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-add.triple <- function(store,
-	subject="http://example.org/Subject",
-	predicate="http://example.org/Predicate",
-	object="http://example.org/Object") {
-	.jcall(
-		"com/github/egonw/rrdf/RJenaHelper",
-		"V",
-		"addObjectProperty", store,
-		subject, predicate, object
-	)
+add.triple.fromObjects <- function(store,
+                                   subject,
+                                   predicate,
+                                   object) {
+  .jcall(
+    "com/github/egonw/rrdf/RJenaHelper",
+    "V",
+    "addObjectProperty", store,
+    subject, predicate, object
+  )
 }
