@@ -8,3 +8,22 @@ rrdf/java/bin
 rrdf/java/*~
 rrdf/java/*.jar
 
+
+*.pper
+
+.Rproj.user/D7D1A736/sdb/prop/439732C9
+
+.Rproj.user/D7D1A736/saved_source_markers
+
+.Rproj.user/D7D1A736/sdb/prop/INDEX
+
+.Rproj.user/D7D1A736/sdb/s-296795E7/5EED159B
+
+.Rproj.user/D7D1A736/sdb/prop/6465F5D1
+
+.Rproj.user/D7D1A736/sdb/s-296795E7/BBCA03AD
+
+.Rproj.user/D7D1A736/sdb/s-296795E7/lock_file
+.Rproj.user
+
+.Rhistory

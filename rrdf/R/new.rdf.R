@@ -17,13 +17,13 @@ new.rdf <- function(ontology=TRUE) {
     if (ontology) {
 		model <- .jcall(
 			"com/github/egonw/rrdf/RJenaHelper",
-			"Lcom/hp/hpl/jena/rdf/model/Model;",
+			"Lorg/apache/jena/rdf/model/Model;",
 			"newOntoRdf"
 		)
 	} else {
 		model <- .jcall(
 			"com/github/egonw/rrdf/RJenaHelper",
-			"Lcom/hp/hpl/jena/rdf/model/Model;",
+			"Lorg/apache/jena/rdf/model/Model;",
 			"newRdf"
 		)
 	}
