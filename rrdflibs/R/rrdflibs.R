@@ -8,7 +8,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details. 
+# GNU Affero General Public License for more details.
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -22,14 +22,14 @@ require(rJava, quietly=TRUE)
     if (dlp!="") { # for Mac OS X we need to remove X11 from lib-path
         Sys.setenv("DYLD_LIBRARY_PATH"=sub("/usr/X11R6/lib","",dlp))
     }
-
-	jenaJars = c(
-		"commons-codec-1.6.jar", "httpclient-4.2.6.jar", "httpcore-4.2.5.jar",
-		"jcl-over-slf4j-1.7.6.jar", "jena-arq-2.12.1.jar", "jena-core-2.12.1.jar",
-		"jena-iri-1.1.1.jar", "jena-tdb-1.1.1.jar",
-		"log4j-1.2.17.jar", "slf4j-api-1.6.4.jar",
-		"slf4j-log4j12-1.6.4.jar", "xercesImpl-2.11.0.jar",
-		"xml-apis-1.4.01.jar"
-	)
-	.jpackage(pkg, jars=jenaJars)
+    
+    jenaJars = c(
+    "commons-codec-1.9.jar", "httpclient-4.2.6.jar", "httpcore-4.2.5.jar",
+    "jcl-over-slf4j-1.7.12.jar", "jena-arq-3.0.0.jar", "jena-core-3.0.0.jar",
+    "jena-iri-3.0.0.jar", "jena-tdb-3.0.0.jar",
+    "log4j-1.2.17.jar", "slf4j-api-1.6.4.jar",
+    "slf4j-log4j12-1.7.12.jar", "xercesImpl-2.11.0.jar",
+    "xml-apis-1.4.01.jar"
+    )
+    .jpackage(pkg, jars=jenaJars)
 }
