@@ -13,6 +13,6 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-create.blankNode<-function(store,URI){
+create.resource<-function(store,URI){
   .jcall("com/github/egonw/rrdf/RJenaHelper","Lorg/apache/jena/rdf/model/Resource;","createResource",store,URI)
 }
