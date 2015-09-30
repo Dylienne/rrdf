@@ -29,3 +29,5 @@ rrdf/java/*.jar
 .Rhistory
 
 rrdf.Rproj
+
+.RData
