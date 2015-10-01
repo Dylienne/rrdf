@@ -31,3 +31,5 @@ rrdf/java/*.jar
 rrdf.Rproj
 
 .RData
+
+rrdf2/

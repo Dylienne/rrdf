@@ -13,23 +13,26 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-.packageName <- "rrdflibs"
-
-require(rJava, quietly=TRUE)
-
-.onLoad <- function(lib, pkg) {
-    dlp<-Sys.getenv("DYLD_LIBRARY_PATH")
-    if (dlp!="") { # for Mac OS X we need to remove X11 from lib-path
-        Sys.setenv("DYLD_LIBRARY_PATH"=sub("/usr/X11R6/lib","",dlp))
+load.rdf <- function(filename, format="RDF/XML", appendTo=NULL) {
+	formats = c("RDF/XML", "TURTLE", "N-TRIPLES", "N3")
+	if (!(format %in% formats))
+		stop("Formats must be one in: ", paste(formats, collapse=", "))
+	if (is.null(appendTo)) {
+	    model <- .jcall(
+    	    "com/github/egonw/rrdf/RJenaHelper",
+       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"loadRdf", filename, format
+    	)
+    } else {
+	    model <- .jcall(
+    	    "com/github/egonw/rrdf/RJenaHelper",
+       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"loadRdf", filename, format, appendTo
+    	)
+	exception <- .jgetEx(clear = TRUE)
+	if (!is.null(exception)) {
+		stop(exception)
+	}
+        return(model)
     }
-
-	jenaJars = c(
-		"commons-codec-1.9.jar", "httpclient-4.2.6.jar", "httpcore-4.2.5.jar",
-		"jcl-over-slf4j-1.7.12.jar", "jena-arq-3.0.0.jar", "jena-core-3.0.0.jar",
-		"jena-iri-3.0.0.jar", "jena-tdb-3.0.0.jar",
-		"log4j-1.2.17.jar", "slf4j-api-1.7.12.jar",
-		"slf4j-log4j12-1.7.12.jar", "xercesImpl-2.11.0.jar",
-		"xml-apis-1.4.01.jar"
-	)
-	.jpackage(pkg, jars=jenaJars)
 }
