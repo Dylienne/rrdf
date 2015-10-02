@@ -1,8 +1,24 @@
 Package: rrdf
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.2.2)
-License: What license is it under?
-LazyData: true
+Type: Package
+Title: rrdf - support for the Resource Description Framework
+Version: 2.1.1
+Date: 2015-07-19
+Authors@R: c(person("Egon", "Willighagen", role = c("aut", "cre"),
+  email = "egon.willighagen@gmail.com"),
+  person("Carl", "Boettiger", role = "ctb"),
+  person("Ryan", "Kohl", role = "ctb"),
+  person("Davide", "Ceolin", role="ctb"))
+Author: Egon Willighagen [aut, cre],
+  Carl Boettiger [ctb],
+  Ryan Kohl [ctb],
+  Davide Ceolin [ctb]
+Maintainer: Egon Willighagen <egon.willighagen@gmail.com>
+Depends: R (>= 2.0.0), rJava, rrdflibs (>= 1.4.0)
+Suggests: testthat
+Description: Work with RDF data using the Jena (http://jena.apache.org) libraries.
+  It allows SPARQLing local and remote end point, in-memory triple stores, creating
+  new triples, and file IO in various formats.
+License: AGPL-3
+LazyLoad: yes
+URL: https://github.com/davideceolin/rrdf
+BugReports: https://github.com/davideceolin/rrdf/issues
