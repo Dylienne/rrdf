@@ -14,5 +14,5 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 create.property<-function(store,URI){
-  .jcall("com/github/egonw/rrdf/RJenaHelper","Lorg/apache/jena/rdf/model/Property;","createProperty",store)
+  .jcall("com/github/egonw/rrdf/RJenaHelper","Lorg/apache/jena/rdf/model/Property;","createProperty",store,URI)
 }
