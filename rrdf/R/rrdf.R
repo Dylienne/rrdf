@@ -23,8 +23,5 @@ require(rrdflibs, quietly=TRUE)
     if (dlp!="") { # for Mac OS X we need to remove X11 from lib-path
         Sys.setenv("DYLD_LIBRARY_PATH"=sub("/usr/X11R6/lib","",dlp))
     }
-    
-    .jaddClassPath("rrdf.jar")
-    #.jpackage(pkg, jars=c("rrdf.jar"))
+    .jpackage(pkg, jars=c("rrdf.jar"))
 }
-.jaddClassPath("/inst/java/rrdf.jar")
