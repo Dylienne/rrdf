@@ -3,11 +3,6 @@ rrdf/inst/doc/tutorial.pdf
 *.tar.gz
 *~
 *.bak
-java/
-rrdf/java/bin
-rrdf/java/*~
-rrdf/java/*.jar
-
 
 *.pper
 
