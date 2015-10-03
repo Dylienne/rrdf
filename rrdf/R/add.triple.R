@@ -13,21 +13,18 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-add.triple <- function(store,
-                                   subject,
-                                   predicate,
-                                   object) {
+add.triple <- function(store,subject,predicate,object) {
   if(class(object)=="character"){
     .jcall(
     "com/github/egonw/rrdf/RJenaHelper",
     "V",
-    "addObjectProperty", store,
+    "addDataProperty", store,
     subject, predicate, object)
   }else{
     .jcall(
       "com/github/egonw/rrdf/RJenaHelper",
       "V",
-      "addDataProperty", store,
+      "addObjectProperty", store,
       subject, predicate, object)
   }
 }
