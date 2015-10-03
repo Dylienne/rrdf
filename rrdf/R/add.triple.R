@@ -17,10 +17,17 @@ add.triple <- function(store,
                                    subject,
                                    predicate,
                                    object) {
-  .jcall(
+  if(class(object)=="character"){
+    .jcall(
     "com/github/egonw/rrdf/RJenaHelper",
     "V",
     "addObjectProperty", store,
-    subject, predicate, object
-  )
+    subject, predicate, object)
+  }else{
+    .jcall(
+      "com/github/egonw/rrdf/RJenaHelper",
+      "V",
+      "addDataProperty", store,
+      subject, predicate, object)
+  }
 }
