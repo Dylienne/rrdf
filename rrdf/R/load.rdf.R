@@ -20,13 +20,13 @@ load.rdf <- function(filename, format="RDF/XML", appendTo=NULL) {
 	if (is.null(appendTo)) {
 	    model <- .jcall(
     	    "com/github/egonw/rrdf/RJenaHelper",
-       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"Lorg/apache/jena/rdf/model/Model;",
        		"loadRdf", filename, format
     	)
     } else {
 	    model <- .jcall(
     	    "com/github/egonw/rrdf/RJenaHelper",
-       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"Lorg/apache/jena/rdf/model/Model;",
        		"loadRdf", filename, format, appendTo
     	)
 	exception <- .jgetEx(clear = TRUE)

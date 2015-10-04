@@ -20,14 +20,14 @@ fromString.rdf <- function(rdfContent, format="RDF/XML", appendTo=NULL) {
 	if (is.null(appendTo)) {
 	    model <- .jcall(
     	    "com/github/egonw/rrdf/RJenaHelper",
-       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"Lorg/apache/jena/rdf/model/Model;",
        		"fromString", rdfContent, format
     	)
         return(model)
     } else {
 	    model <- .jcall(
     	    "com/github/egonw/rrdf/RJenaHelper",
-       		"Lcom/hp/hpl/jena/rdf/model/Model;",
+       		"Lorg/apache/jena/rdf/model/Model;",
        		"fromString", rdfContent, format, appendTo
     	)
     }
